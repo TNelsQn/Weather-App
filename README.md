@@ -28,7 +28,7 @@ This is a simple weather application built with React.js. It fetches weather dat
    - Sign up or log in to your account on [OpenWeatherMap](https://openweathermap.org/).
    - Once logged in, go to the API keys section to generate a new API key.
 
-4. Add your API key to the file in the frontend WeatherForm.js
+4. Add your API key to the file in the backend file Controller.java
 
 5. Start the frontend development server:
 

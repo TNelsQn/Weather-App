@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RestController
 public class Controller {
 
-    final String uri = ["REPLAC WITH YOUR OWN API KEY.  EASILY GET ONE FROM OPENWEATHER.COM"];
+    final String uri = ["REPLACE WITH YOUR OWN API KEY.  EASILY GET ONE FROM OPENWEATHER.COM"];
     final String api = "0e1131d928da1154f0c342376fd23dee";
 
     @GetMapping(path = "/weather")

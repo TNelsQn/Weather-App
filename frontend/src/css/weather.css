@@ -51,16 +51,39 @@ button:hover {
   background-color: #c82333; /* Darker color on hover */
 }
 
-.weather-icon {
-  display: block;
-  margin: 0 auto;
-  width: 120px;
-  height: 120px; 
+.weather-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px; /* Add top margin */
 }
 
-.weather-container {
-  padding: 20px; /* Adjust the padding value as needed */
-  text-align: center; /* Center align the content */
+.weather-info {
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 20px;
+}
+
+.weather-details p {
+  margin: 0;
+}
+
+.location-info {
+  display: flex;
+  text-align: right;
+  margin: 0;
+}
+
+.centre {
+  text-align: center;
 }
 
 .centre {

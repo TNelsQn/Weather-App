@@ -16,13 +16,15 @@ function WeatherForm({ onSubmit }) {
 
         try {
             const response = await axios.get(`http://localhost:8080/weather?city=${city}`);
-            onSubmit(response.data);
 
 
             if (response.status === 200) {
                 console.log("Weather data sent successfully");
+                console.log(response.data);
+                onSubmit(response.data);
             } else {
                 console.log("Error, Weater data failed to send");
+                onSubmit(false);
             }
             
         } catch (error) {

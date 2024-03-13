@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/weather.css';
 
-const WeatherContainer = ({ weatherData }) => {
-    if (!weatherData) {
-        return <div></div>;
+const WeatherInfo = ({ weatherData }) => {
+    if (!weatherData || weatherData == "No data available!!!") {
+        return <div className="weather-container">No Data available, please try a different location</div>;
     }
 
   const { main, weather, wind } = weatherData;
@@ -13,17 +13,39 @@ const WeatherContainer = ({ weatherData }) => {
     return (temp - 273.15).toFixed(2);
   };
 
-  return (
-    <div className="weather-container">
-        <h1 className="centre">Weather Forcast in {weatherData.name}</h1>
-        <img src={iconUrl} alt={weather[0].description} className="weather-icon" />
-        <div>
-            <p>Temperature: {convertCelcuis(main.temp)} °C</p>
-            <p>Humidity: {main.humidity}%</p>
-            <p>Wind Speed: {wind.speed} m/s</p>
-        </div>
-    </div>
-  );
+  const convertWindSpeed = (speed) => {
+    return (speed * 2.23694).toFixed(2);
 };
 
-export default WeatherContainer;
+  const getTime = () => {
+    const currentTime = new Date();
+    const localTimeMili = currentTime.getTime() + (weatherData.timezone * 1000);
+    const options = { weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false };
+    console.log(new Date(localTimeMili).toLocaleDateString(undefined, options));
+    console.log(weatherData);
+    return new Date(localTimeMili).toLocaleDateString(undefined, options);
+    
+  };
+
+  return (
+    <div className="weather-container">
+        <div className="weather-info">
+            <img src={iconUrl} alt={weather[0].description} className="weather-icon" />
+            <div className="weather-details">
+                <p>Temperature: {convertCelcuis(main.temp)} °C</p>
+                <p>Humidity: {main.humidity}%</p>
+                <p>Wind Speed: {convertWindSpeed(wind.speed)} mph</p>
+            </div>
+        </div>
+        <div className="location-info">
+          <div className="weather-details">
+            <p>{weatherData.name}</p>
+            <p>{getTime()}</p>
+            <p>{weather[0].description}</p>
+           </div>
+        </div>
+    </div>
+);
+};
+
+export default WeatherInfo;

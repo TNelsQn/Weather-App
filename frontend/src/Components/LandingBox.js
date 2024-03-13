@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../css/weather.css'; // CSS file for styling
 
-function LandingBox({ children, onSubmit }) {
+function LandingBox({ children }) {
 
   useEffect(() => {
     const handleResize = () => {

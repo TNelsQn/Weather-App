@@ -21,7 +21,6 @@ const WeatherInfo = ({ weatherData }) => {
     const currentTime = new Date();
     const localTimeMili = currentTime.getTime() + (weatherData.timezone * 1000);
     const options = { weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false };
-    console.log(new Date(localTimeMili).toLocaleDateString(undefined, options));
     console.log(weatherData);
     return new Date(localTimeMili).toLocaleDateString(undefined, options);
     

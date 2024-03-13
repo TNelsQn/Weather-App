@@ -16,7 +16,7 @@
   align-items: center;
   text-align: center; /* Center the content horizontally */
   background-color: white;
-  border-radius: 10px; /* Adding border-radius for a rounded appearance *
+  border-radius: 10px; /* Adding border-radius for a rounded appearance */
 }
 
 form {
@@ -72,13 +72,16 @@ button:hover {
   margin-right: 20px;
 }
 
-.weather-details p {
-  margin: 0;
-}
 
 .location-info {
-  display: flex;
   text-align: right;
+  line-height: 1.2;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Display items in a column */
+  align-items: flex-end; /* Align items to the right */
+}
+
+.location-info p {
   margin: 0;
 }
 

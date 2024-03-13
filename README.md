@@ -2,6 +2,7 @@
 
 This is a simple weather application built with React.js. It fetches weather data from the OpenWeatherMap API and displays it to the user.
 
+
 ## Features
 
 - Displays current weather information including temperature, humidity, and wind speed.
@@ -76,4 +77,8 @@ This is a simple weather application built with React.js. It fetches weather dat
 
 ## Credits
 
+<<<<<<< HEAD
 This application was created by Tom Nelson.
+=======
+This application was created by Tom Nelson.
+>>>>>>> origin/main
